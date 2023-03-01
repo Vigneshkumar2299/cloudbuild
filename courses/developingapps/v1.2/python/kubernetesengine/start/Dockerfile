@@ -5,4 +5,4 @@ ENV PATH /env/bin:$PATH
 ADD requirements.txt /app/requirements.txt
 RUN pip install -r /app/requirements.txt
 ADD . /app
-CMD gunicorn -b 0.0.0.0:$PORT quiz:app
+CMD python -m quiz.console.worker
